@@ -439,10 +439,10 @@ function ProjectCard({ project, index }: { project: ProjectType; index: number }
               <div className="w-16 border-r border-zinc-200 pr-1 py-0.5 flex flex-col gap-1">
                 <span className="text-[6.5px] font-bold text-zinc-400 uppercase tracking-widest">Docs</span>
                 <div className="w-full h-3 bg-purple-50 text-purple-700 rounded border border-purple-200 flex items-center px-1 font-semibold text-[7.5px] truncate">
-                  📝 Notes.md
+                  Notes.md
                 </div>
                 <div className="w-full h-3 bg-zinc-50 rounded flex items-center px-1 font-semibold text-[7.5px] text-zinc-400 truncate">
-                  ⚙️ Env.local
+                  Env.local
                 </div>
               </div>
 
@@ -1078,14 +1078,18 @@ export default function Home() {
           </motion.div>
 
           {/* Mobile Hamburger Button */}
-          <div className="md:hidden">
-            <button 
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 text-[#1c1d20] focus:outline-none"
-              aria-label="Toggle Menu"
-            >
-              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </button>
+          <div className="md:hidden flex items-center justify-center mr-2">
+            <input 
+              type="checkbox" 
+              id="checkbox" 
+              checked={isMenuOpen}
+              onChange={() => setIsMenuOpen(!isMenuOpen)}
+            />
+            <label htmlFor="checkbox" className="toggle">
+              <div className="bars" id="bar1"></div>
+              <div className="bars" id="bar2"></div>
+              <div className="bars" id="bar3"></div>
+            </label>
           </div>
         </div>
 
@@ -1205,7 +1209,7 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.5 }}
               className="flex items-center gap-1.5 text-xs font-bold tracking-widest text-[#5a5c63]"
             >
-              {"HI, I'M"} <span className="animate-wiggle inline-block origin-[70%_70%]">👋</span>
+              {"HI, I'M"}
             </motion.p>
             
             <motion.h3 
@@ -1371,7 +1375,7 @@ export default function Home() {
         </div>
 
         {/* RIGHT COLUMN: PAINT SPRAY & DEVICE CANVAS */}
-        <div className="relative flex h-[460px] w-full items-center justify-center lg:col-span-5 lg:h-[600px] xl:col-span-5 -mt-24 sm:-mt-36 lg:-mt-48 xl:-mt-52">
+        <div className="relative flex h-[460px] w-full items-center justify-center lg:col-span-5 lg:h-[600px] xl:col-span-5 mt-12 lg:-mt-48 xl:-mt-52">
           
           {/* VIBRANT SPRAY PAINT BACKGROUND (SVGs with Noise & Radial Blurs) */}
           <div className="absolute inset-0 z-0 h-full w-full select-none overflow-hidden rounded-[40px] pointer-events-none md:scale-105 lg:scale-110">
@@ -1447,14 +1451,14 @@ export default function Home() {
             initial={{ opacity: 0, scale: 0.9, y: 10, rotate: -2 }}
             animate={{ opacity: 1, scale: 1, y: -15, rotate: -2 }}
             transition={{ duration: 1.2, ease: 'backOut', delay: 0.4 }}
-            className="absolute z-[25] h-[320px] w-[260px] sm:h-[410px] sm:w-[330px] pointer-events-none select-none"
+            className="absolute z-[25] -mt-16 sm:-mt-24 lg:-mt-32 h-[380px] w-[310px] sm:h-[490px] sm:w-[390px] lg:h-[550px] lg:w-[440px] pointer-events-none select-none"
           >
             <Image 
-              src="/images/fahad_portrait.jpg" 
+              src="/images/fahad-portrait.png" 
               alt="Fahad Ali Portrait"
               fill
               priority
-              sizes="(max-width: 640px) 260px, 330px"
+              sizes="(max-width: 640px) 310px, (max-width: 1024px) 390px, 440px"
               referrerPolicy="no-referrer"
               className="object-contain drop-shadow-[0_20px_25px_rgba(0,0,0,0.35)] filter contrast-[1.02] brightness-[1.01]"
             />
@@ -1581,7 +1585,7 @@ export default function Home() {
                   transition={{ duration: 0.8, delay: 0.15, ease: 'easeOut' }}
                   className="font-display text-[52px] sm:text-[72px] md:text-[80px] lg:text-[88px] font-black leading-[1.02] tracking-tight text-[#3b6cff]"
                 >
-                  Arsenal <span className="text-white">✦</span>
+                  Arsenal
                 </motion.h2>
               </div>
 
@@ -1727,7 +1731,7 @@ export default function Home() {
                           </div>
 
                           <div className="text-[8px] font-mono text-[#3b6cff] text-center select-none uppercase tracking-widest animate-pulse font-black">
-                            ✦ Hub Integration Live ✦
+                            Hub Integration Live
                           </div>
                         </motion.div>
                       )}
@@ -1812,7 +1816,7 @@ export default function Home() {
                     KNOWLEDGE
                   </span>
                   <span className="text-[9px] uppercase font-mono font-semibold tracking-wide text-blue-100 opacity-90 mt-1 select-none">
-                    CORE ✦
+                    CORE
                   </span>
                 </div>
 
@@ -1954,7 +1958,7 @@ export default function Home() {
                           </div>
 
                           <div className="text-[8px] font-mono text-[#3b6cff] text-center select-none uppercase tracking-widest animate-pulse font-black">
-                            ✦ Hub Integration Live ✦
+                            Hub Integration Live
                           </div>
                         </motion.div>
                       )}
@@ -1994,7 +1998,7 @@ export default function Home() {
           </span>
           <h2 className="font-display text-5xl sm:text-7xl lg:text-8xl font-black text-zinc-900 tracking-tight leading-none">
             Selected<br />
-            Projects <span className="text-blue-600">✦</span>
+            Projects
           </h2>
           <p className="font-sans text-base sm:text-lg text-zinc-500 mt-6 max-w-xl leading-relaxed">
             A collection of products, websites, and digital experiences I&apos;ve designed and developed.
@@ -2088,7 +2092,7 @@ export default function Home() {
             </span>
             <h2 className="font-display text-5xl sm:text-7xl font-black text-zinc-900 tracking-tight leading-none">
               How I Turn<br />
-              <span className="text-blue-600">Ideas Into Products</span> <span className="text-blue-600">✦</span>
+              <span className="text-blue-600">Ideas Into Products</span>
             </h2>
             <p className="font-sans text-base sm:text-lg text-zinc-500 mt-6 max-w-xl mx-auto leading-relaxed">
               A structured, professional engineering journey designed to bring robust, high-performance, and beautifully crafted products to life.
@@ -2191,545 +2195,512 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PREMIUM CONTACT SECTION (THE PORTFOLIO'S FINAL DESTINATION) */}
-      <section id="contact" className="relative w-full bg-[#0A0A0A] text-zinc-100 py-32 sm:py-40 overflow-hidden border-t border-zinc-900">
+      {/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
+      {/* PREMIUM CONTACT SECTION â€” COMPLETELY REDESIGNED                    */}
+      {/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
+      <section id="contact" className="relative w-full bg-[#060606] text-zinc-100 py-32 sm:py-44 overflow-hidden">
         
-        {/* Transitional Gradient Divider from Light Journey Section to Dark Contact Section */}
-        <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-white to-[#0A0A0A] pointer-events-none z-10" />
+        {/* Transitional Gradient Divider from Light to Dark */}
+        <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-white via-zinc-200 to-[#060606] pointer-events-none z-10" />
 
-        {/* Subtle Grid overlay */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-[0.12] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none z-0" />
-
-        {/* Noise Texture (SVG Film Grain Filter Overlay) */}
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;utf8,<svg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22><filter id=%22noiseFilter%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.85%22 numOctaves=%223%22 stitchTiles=%22stitch%22/></filter><rect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22 opacity=%220.015%22/></svg>')] pointer-events-none opacity-[0.2] z-0" />
-
-        {/* Soft Glowing Ambient Spots */}
-        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-indigo-600/10 rounded-full blur-[150px] pointer-events-none" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-500/5 rounded-full blur-[180px] pointer-events-none" />
-
-        {/* Animated Background SVG Orbital Lines & Waves */}
-        <svg className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[1200px] pointer-events-none opacity-20 z-0 stroke-zinc-700/30 fill-none" viewBox="0 0 1000 1000">
-          <circle cx="500" cy="500" r="250" strokeDasharray="3 6" className="animate-[spin_120s_linear_infinite]" />
-          <circle cx="500" cy="500" r="400" strokeDasharray="6 12" className="animate-[spin_240s_linear_infinite_reverse]" />
-          <path d="M 100,500 Q 500,200 900,500 T 100,500" stroke="url(#blue-energy-gradient)" strokeWidth="1.5" className="opacity-40 animate-pulse" />
-          <defs>
-            <linearGradient id="blue-energy-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#3b82f6" stopOpacity="0" />
-              <stop offset="50%" stopColor="#60a5fa" stopOpacity="1" />
-              <stop offset="100%" stopColor="#3b82f6" stopOpacity="0" />
-            </linearGradient>
-          </defs>
-        </svg>
-
-        {/* Ambient Floating Particles for the Contact Section */}
-        {contactFloatingParticles.map((p, idx) => (
-          <motion.div
-            key={idx}
-            className={`absolute ${p.size} rounded-full bg-blue-500/30 blur-[0.5px] pointer-events-none z-10`}
-            style={{ left: p.left, top: p.top }}
-            animate={{
-              y: [0, -50, 0],
-              opacity: [0.1, 0.7, 0.1]
+        {/* Animated Mesh Gradient Background */}
+        <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+          <motion.div 
+            className="absolute -top-[30%] -left-[20%] w-[80vw] h-[80vw] rounded-full opacity-[0.07]"
+            style={{ background: 'radial-gradient(circle, #3b82f6 0%, transparent 70%)' }}
+            animate={{ 
+              x: [0, 80, -40, 0],
+              y: [0, -60, 40, 0],
+              scale: [1, 1.1, 0.95, 1]
             }}
-            transition={{
-              duration: 5 + idx * 2,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: p.delay
-            }}
+            transition={{ duration: 25, repeat: Infinity, ease: "easeInOut" }}
           />
-        ))}
+          <motion.div 
+            className="absolute -bottom-[30%] -right-[20%] w-[70vw] h-[70vw] rounded-full opacity-[0.06]"
+            style={{ background: 'radial-gradient(circle, #8b5cf6 0%, transparent 70%)' }}
+            animate={{ 
+              x: [0, -60, 50, 0],
+              y: [0, 50, -70, 0],
+              scale: [1, 0.9, 1.15, 1]
+            }}
+            transition={{ duration: 30, repeat: Infinity, ease: "easeInOut" }}
+          />
+          <motion.div 
+            className="absolute top-[40%] left-[50%] -translate-x-1/2 w-[50vw] h-[50vw] rounded-full opacity-[0.04]"
+            style={{ background: 'radial-gradient(circle, #06b6d4 0%, transparent 70%)' }}
+            animate={{ 
+              x: [0, 40, -30, 0],
+              y: [0, -40, 30, 0],
+            }}
+            transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
+          />
+        </div>
+
+        {/* Subtle dot grid */}
+        <div 
+          className="absolute inset-0 pointer-events-none z-0 opacity-[0.03]"
+          style={{
+            backgroundImage: 'radial-gradient(circle, #ffffff 1px, transparent 1px)',
+            backgroundSize: '32px 32px',
+          }}
+        />
 
         <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 z-20">
           
-          {/* Headline and Subtitle */}
+          {/* Section Header */}
           <div className="text-center mb-20 sm:mb-28">
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
+              transition={{ duration: 0.9, ease: "easeOut" }}
             >
-              <span className="font-sans text-xs sm:text-sm font-extrabold text-blue-500 uppercase tracking-[0.2em] mb-4 block">
-                Let&apos;s Connect
-              </span>
-              <h2 className="font-display text-5xl sm:text-7xl lg:text-8xl font-black text-white tracking-tight leading-none">
-                Let&apos;s Build<br />
-                <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-cyan-400 bg-clip-text text-transparent">Something Amazing</span> <span className="text-blue-500">✦</span>
+              {/* Availability Pill */}
+              <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-xs font-semibold text-emerald-400 tracking-wide mb-8 backdrop-blur-sm">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400" />
+                </span>
+                Available for Projects &amp; Freelance
+              </div>
+
+              <h2 className="font-display text-5xl sm:text-7xl lg:text-[88px] font-black text-white tracking-tight leading-[0.95]">
+                {"Let's Work"}
+                <br />
+                <span className="relative inline-block">
+                  <span className="bg-gradient-to-r from-blue-400 via-violet-400 to-cyan-400 bg-clip-text text-transparent">
+                    Together
+                  </span>
+                  {/* Animated underline */}
+                  <motion.div 
+                    className="absolute -bottom-2 left-0 h-1 rounded-full bg-gradient-to-r from-blue-500 via-violet-500 to-cyan-500"
+                    initial={{ width: '0%' }}
+                    whileInView={{ width: '100%' }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1.2, delay: 0.5, ease: 'easeOut' }}
+                  />
+                </span>
               </h2>
-              <p className="font-sans text-base sm:text-lg text-zinc-400 mt-6 max-w-xl mx-auto leading-relaxed">
-                Have an idea, project, startup, or opportunity?<br className="hidden sm:inline" /> Let&apos;s turn it into reality.
+              <p className="font-sans text-base sm:text-lg text-zinc-400 mt-8 max-w-lg mx-auto leading-relaxed">
+                Have a project in mind, a startup idea, or an exciting opportunity?
+                <br className="hidden sm:inline" />
+                {"I'd love to hear from you."}
               </p>
             </motion.div>
           </div>
 
-          {/* Split Layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 sm:gap-16 items-start">
+          {/* Main Content Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-start">
             
-            {/* Left Column: Premium Interactive Contact Cards */}
-            <motion.div 
-              initial={{ opacity: 0, x: -30 }}
+            {/* LEFT COLUMN - Contact Info Cards */}
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-              className="lg:col-span-5 space-y-4 w-full"
+              className="space-y-8"
             >
-              <h3 className="font-display text-lg font-bold text-zinc-400 uppercase tracking-wider mb-6 pl-1 border-l-2 border-blue-500/50 text-left">
-                Uplink Coordinates
-              </h3>
-              
-              <ContactCard 
-                title="Email"
-                value="abdullahparvaiz2025@gmail.com"
-                icon={Mail}
-                copyable={true}
-              />
-              
-              <ContactCard 
-                title="Location"
-                value="Toronto, Canada"
-                icon={MapPin}
-              />
-              
-              <ContactCard 
-                title="LinkedIn"
-                value="linkedin.com/in/fahad-ali"
-                icon={Linkedin}
-                href="https://linkedin.com/in/fahad-ali"
-              />
-              
-              <ContactCard 
-                title="GitHub"
-                value="github.com/fahad-ali"
-                icon={Github}
-                href="https://github.com/fahad-ali"
-              />
+              {/* Intro Text */}
+              <div className="space-y-4">
+                <h3 className="font-display text-2xl sm:text-3xl font-bold text-white">
+                  {"Don't be a stranger"}
+                </h3>
+                <p className="font-sans text-sm sm:text-base text-zinc-400 leading-relaxed max-w-md">
+                  Whether {"it's"} a quick question or a full project brief, my inbox is always open. {"Let's"} create something extraordinary together.
+                </p>
+              </div>
+
+              {/* Contact Info Cards with Animated Border */}
+              <div className="space-y-4">
+                {[
+                  { icon: Mail, title: 'Email', value: 'abdullahparvaiz2025@gmail.com', href: 'mailto:abdullahparvaiz2025@gmail.com', color: 'from-blue-500 to-cyan-500' },
+                  { icon: MapPin, title: 'Location', value: 'Toronto, Canada', href: undefined, color: 'from-violet-500 to-purple-500' },
+                  { icon: Linkedin, title: 'LinkedIn', value: 'linkedin.com/in/fahad-ali', href: 'https://linkedin.com/in/fahad-ali', color: 'from-blue-600 to-blue-400' },
+                  { icon: Github, title: 'GitHub', value: 'github.com/fahad-ali', href: 'https://github.com/fahad-ali', color: 'from-zinc-400 to-zinc-600' },
+                ].map((item, idx) => {
+                  const Icon = item.icon;
+                  const Wrapper = item.href ? 'a' : 'div';
+                  const wrapperProps = item.href ? { href: item.href, target: '_blank', rel: 'noopener noreferrer' } : {};
+                  return (
+                    <motion.div
+                      key={item.title}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: 0.1 * idx }}
+                    >
+                      <Wrapper
+                        {...wrapperProps as any}
+                        className="group relative block rounded-2xl p-[1px] bg-gradient-to-r from-zinc-800/80 to-zinc-800/40 hover:from-blue-500/40 hover:to-violet-500/40 transition-all duration-500 cursor-pointer"
+                      >
+                        <div className="relative flex items-center gap-4 rounded-2xl bg-[#0c0c0c] px-6 py-5 overflow-hidden">
+                          {/* Hover glow */}
+                          <div className={`absolute inset-0 bg-gradient-to-r ${item.color} opacity-0 group-hover:opacity-[0.04] transition-opacity duration-500`} />
+                          
+                          {/* Icon */}
+                          <div className={`relative flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br ${item.color} p-[1px]`}>
+                            <div className="w-full h-full rounded-xl bg-[#0c0c0c] flex items-center justify-center group-hover:bg-[#111] transition-colors duration-300">
+                              <Icon className="w-5 h-5 text-zinc-400 group-hover:text-white transition-colors duration-300" />
+                            </div>
+                          </div>
+
+                          {/* Text */}
+                          <div className="min-w-0 flex-1 relative z-10">
+                            <span className="block font-sans text-[11px] font-bold text-zinc-500 uppercase tracking-widest">{item.title}</span>
+                            <span className="block font-sans text-sm sm:text-base font-semibold text-zinc-200 group-hover:text-white transition-colors truncate mt-0.5">
+                              {item.value}
+                            </span>
+                          </div>
+
+                          {/* Arrow */}
+                          {item.href && (
+                            <ArrowUpRight className="w-4 h-4 text-zinc-600 group-hover:text-blue-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300 flex-shrink-0" />
+                          )}
+                        </div>
+                      </Wrapper>
+                    </motion.div>
+                  );
+                })}
+              </div>
+
+              {/* Quick Schedule Call CTA */}
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+              >
+                <a 
+                  href="https://calendly.com/fahad-ali"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-3 px-6 py-3.5 rounded-xl bg-gradient-to-r from-blue-600 to-violet-600 hover:from-blue-500 hover:to-violet-500 text-sm font-bold text-white transition-all duration-300 shadow-lg shadow-blue-500/20 hover:shadow-blue-500/30 hover:shadow-xl"
+                >
+                  <Calendar className="w-4 h-4" />
+                  <span>Schedule a Call</span>
+                  <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </a>
+              </motion.div>
             </motion.div>
 
-            {/* Right Column: Futuristic Terminal Contact Panel */}
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+            {/* RIGHT COLUMN - Premium Contact Form */}
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
-              className="lg:col-span-7 w-full"
             >
-              <div className="w-full bg-zinc-950/80 border border-zinc-800/80 rounded-2xl overflow-hidden shadow-2xl backdrop-blur-md relative">
-                {/* Terminal Window Header Bar */}
-                <div className="bg-zinc-900/60 border-b border-zinc-800/80 px-4 py-3 flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 rounded-full bg-red-500/80" />
-                    <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
-                    <div className="w-3 h-3 rounded-full bg-green-500/80" />
+              <div className="relative rounded-3xl p-[1px] bg-gradient-to-b from-zinc-700/50 via-zinc-800/30 to-zinc-900/50">
+                <div className="rounded-3xl bg-[#0a0a0a] overflow-hidden shadow-2xl">
+                  
+                  {/* Form Header */}
+                  <div className="px-8 pt-8 pb-0">
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-violet-600 flex items-center justify-center">
+                        <Mail className="w-5 h-5 text-white" />
+                      </div>
+                      <div>
+                        <h4 className="font-display text-lg font-bold text-white">Send a Message</h4>
+                        <p className="text-xs text-zinc-500">{"I'll"} get back to you within 24 hours</p>
+                      </div>
+                    </div>
                   </div>
-                  <div className="font-mono text-xs text-zinc-500 font-bold flex items-center gap-1.5">
-                    <Terminal className="w-3.5 h-3.5 text-blue-400" />
-                    <span>guest@fahadali: ~/contact_form</span>
-                  </div>
-                  <div className="w-12" /> {/* Spacer */}
-                </div>
 
-                {/* Submit Success / Easter Egg State */}
-                {submitSuccess ? (
-                  <motion.div 
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    className="p-10 sm:p-12 text-center space-y-6"
-                  >
-                    <div className="w-20 h-20 bg-gradient-to-tr from-blue-500 to-indigo-600 rounded-full flex items-center justify-center mx-auto shadow-[0_0_35px_rgba(59,130,246,0.45)] border border-blue-400/20">
-                      <motion.span 
-                        animate={{ y: [-3, 3, -3] }}
-                        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                        className="text-4xl"
+                  {/* Submit Success State */}
+                  {submitSuccess ? (
+                    <motion.div 
+                      initial={{ opacity: 0, scale: 0.95 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      className="p-10 sm:p-14 text-center space-y-6"
+                    >
+                      <motion.div 
+                        className="w-20 h-20 mx-auto rounded-2xl bg-gradient-to-br from-blue-500 to-emerald-500 flex items-center justify-center shadow-lg shadow-blue-500/25"
+                        animate={{ y: [-4, 4, -4] }}
+                        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                       >
-                        🚀
-                      </motion.span>
-                    </div>
-                    
-                    <div className="space-y-3">
-                      <h3 className="font-display text-2xl sm:text-3xl font-black text-white tracking-tight">
-                        Mission Accepted <span className="text-blue-400">✦</span>
-                      </h3>
-                      <p className="font-sans text-xs sm:text-sm text-zinc-400 max-w-sm mx-auto leading-relaxed">
-                        Thank you for reaching out. Your transmission has been securely delivered to my uplink. I&apos;ll analyze and respond shortly!
-                      </p>
-                    </div>
+                        <Check className="w-10 h-10 text-white" />
+                      </motion.div>
+                      
+                      <div className="space-y-3">
+                        <h3 className="font-display text-2xl sm:text-3xl font-black text-white">
+                          Message Sent!
+                        </h3>
+                        <p className="font-sans text-sm text-zinc-400 max-w-sm mx-auto leading-relaxed">
+                          {"Thank you for reaching out! I've received your message and will respond as soon as possible."}
+                        </p>
+                      </div>
 
-                    <div className="pt-2">
                       <button
                         onClick={() => {
                           setSubmitSuccess(false);
                           setFormData({ name: '', email: '', projectType: 'Web App', message: '' });
                           setTerminalLogs([]);
                         }}
-                        className="px-5 py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-xs font-mono font-bold text-zinc-400 hover:text-white hover:border-blue-500/30 transition-all duration-300"
+                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-sm font-semibold text-zinc-400 hover:text-white hover:border-blue-500/30 transition-all duration-300"
                       >
-                        &gt; send_another_message
+                        Send Another Message
                       </button>
-                    </div>
-                  </motion.div>
-                ) : isSubmitting ? (
-                  /* Terminal Submission Loading State */
-                  <div className="p-8 sm:p-10 font-mono text-xs sm:text-sm space-y-4 min-h-[350px] flex flex-col justify-center text-left">
-                    <div className="space-y-3">
-                      {terminalLogs.map((log, idx) => (
+                    </motion.div>
+                  ) : isSubmitting ? (
+                    /* Loading State */
+                    <div className="p-10 sm:p-14 flex flex-col items-center justify-center min-h-[400px] space-y-6">
+                      <div className="relative w-16 h-16">
                         <motion.div 
-                          initial={{ opacity: 0, x: -10 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          key={idx} 
-                          className="text-blue-400 font-bold"
-                        >
-                          {log}
-                        </motion.div>
-                      ))}
-                    </div>
-                    <div className="flex items-center gap-2.5 mt-6 text-zinc-500 animate-pulse">
-                      <span className="w-2 h-2 rounded-full bg-blue-500 animate-ping" />
-                      <span>TRANSMITTING PACKETS... DO NOT DISCONNECT</span>
-                    </div>
-                  </div>
-                ) : (
-                  /* Live Terminal Form State */
-                  <form onSubmit={handleContactSubmit} className="p-6 sm:p-8 space-y-6 text-left">
-                    
-                    {/* Command Prompt Init */}
-                    <div className="flex items-center gap-2 text-zinc-500 select-none pb-2 border-b border-zinc-900">
-                      <span>&gt;</span>
-                      <span className="text-blue-400 font-bold">initialize_contact --verbose</span>
-                    </div>
-
-                    {/* Name Input */}
-                    <div className="space-y-1.5">
-                      <div className="text-zinc-500 font-bold flex items-center gap-2 select-none text-[11px] sm:text-xs">
-                        <span>guest@portfolio:~$</span>
-                        <span className="text-zinc-400">set_sender_name</span>
-                      </div>
-                      <div className="flex items-center gap-2 pl-4">
-                        <span className="text-blue-400 font-bold select-none">&gt;</span>
-                        <input 
-                          type="text"
-                          required
-                          value={formData.name}
-                          onChange={(e) => setFormData({...formData, name: e.target.value})}
-                          placeholder="Enter your full name..."
-                          className="bg-transparent border-none outline-none text-zinc-100 w-full py-0.5 font-mono placeholder-zinc-800 focus:ring-0 text-xs sm:text-sm"
+                          className="absolute inset-0 rounded-full border-2 border-blue-500/20"
+                          animate={{ rotate: 360 }}
+                          transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
                         />
-                      </div>
-                    </div>
-
-                    {/* Email Input */}
-                    <div className="space-y-1.5">
-                      <div className="text-zinc-500 font-bold flex items-center gap-2 select-none text-[11px] sm:text-xs">
-                        <span>guest@portfolio:~$</span>
-                        <span className="text-zinc-400">set_sender_email</span>
-                      </div>
-                      <div className="flex items-center gap-2 pl-4">
-                        <span className="text-blue-400 font-bold select-none">&gt;</span>
-                        <input 
-                          type="email"
-                          required
-                          value={formData.email}
-                          onChange={(e) => setFormData({...formData, email: e.target.value})}
-                          placeholder="Enter your email address..."
-                          className="bg-transparent border-none outline-none text-zinc-100 w-full py-0.5 font-mono placeholder-zinc-800 focus:ring-0 text-xs sm:text-sm"
+                        <motion.div 
+                          className="absolute inset-0 rounded-full border-2 border-transparent border-t-blue-500"
+                          animate={{ rotate: 360 }}
+                          transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
                         />
+                        <div className="absolute inset-2 rounded-full bg-gradient-to-br from-blue-500/10 to-violet-500/10 flex items-center justify-center">
+                          <Rocket className="w-5 h-5 text-blue-400" />
+                        </div>
+                      </div>
+                      <div className="text-center space-y-2">
+                        <p className="text-sm font-semibold text-white">Sending your message...</p>
+                        <p className="text-xs text-zinc-500">This will only take a moment</p>
                       </div>
                     </div>
+                  ) : (
+                    /* Form */
+                    <form onSubmit={handleContactSubmit} className="p-8 space-y-6">
+                      
+                      {/* Name & Email Row */}
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div className="space-y-2">
+                          <label className="block text-xs font-bold text-zinc-400 uppercase tracking-wider">Name</label>
+                          <input 
+                            type="text"
+                            required
+                            value={formData.name}
+                            onChange={(e) => setFormData({...formData, name: e.target.value})}
+                            placeholder="John Doe"
+                            className="w-full px-4 py-3.5 rounded-xl bg-zinc-900/50 border border-zinc-800/80 text-sm text-zinc-100 placeholder-zinc-600 focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/20 transition-all duration-300"
+                          />
+                        </div>
+                        <div className="space-y-2">
+                          <label className="block text-xs font-bold text-zinc-400 uppercase tracking-wider">Email</label>
+                          <input 
+                            type="email"
+                            required
+                            value={formData.email}
+                            onChange={(e) => setFormData({...formData, email: e.target.value})}
+                            placeholder="john@example.com"
+                            className="w-full px-4 py-3.5 rounded-xl bg-zinc-900/50 border border-zinc-800/80 text-sm text-zinc-100 placeholder-zinc-600 focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/20 transition-all duration-300"
+                          />
+                        </div>
+                      </div>
 
-                    {/* Project Type Multi-choice Selector */}
-                    <div className="space-y-1.5">
-                      <div className="text-zinc-500 font-bold flex items-center gap-2 select-none text-[11px] sm:text-xs">
-                        <span>guest@portfolio:~$</span>
-                        <span className="text-zinc-400">select_project_type</span>
+                      {/* Project Type Selector */}
+                      <div className="space-y-2">
+                        <label className="block text-xs font-bold text-zinc-400 uppercase tracking-wider">Project Type</label>
+                        <div className="flex flex-wrap gap-2">
+                          {['Web App', 'SaaS', 'Mobile App', 'AI Integration', 'Consulting'].map((type) => (
+                            <button
+                              key={type}
+                              type="button"
+                              onClick={() => setFormData({...formData, projectType: type})}
+                              className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all duration-300 ${
+                                formData.projectType === type 
+                                  ? 'bg-blue-500/15 border border-blue-500/40 text-blue-300 shadow-[0_0_15px_rgba(59,130,246,0.1)]'
+                                  : 'bg-zinc-900/50 border border-zinc-800/80 text-zinc-500 hover:border-zinc-700 hover:text-zinc-300'
+                              }`}
+                            >
+                              {formData.projectType === type && <span className="mr-1"></span>}
+                              {type}
+                            </button>
+                          ))}
+                        </div>
                       </div>
-                      <div className="flex flex-wrap gap-2 pl-4 py-1.5">
-                        {['Web App', 'SaaS', 'Mobile App', 'AI Integration', 'Consulting'].map((type) => (
-                          <button
-                            key={type}
-                            type="button"
-                            onClick={() => setFormData({...formData, projectType: type})}
-                            className={`px-3 py-1 rounded-lg border text-[10px] sm:text-xs font-mono transition-all duration-200 ${
-                              formData.projectType === type 
-                                ? 'bg-blue-500/10 border-blue-500/50 text-blue-300 shadow-[0_0_12px_rgba(59,130,246,0.15)]'
-                                : 'bg-zinc-900/60 border-zinc-800/80 text-zinc-500 hover:border-zinc-700 hover:text-zinc-300'
-                            }`}
-                          >
-                            {type === formData.projectType ? '✦ ' : ''}{type}
-                          </button>
-                        ))}
-                      </div>
-                    </div>
 
-                    {/* Message Textarea */}
-                    <div className="space-y-1.5">
-                      <div className="text-zinc-500 font-bold flex items-center gap-2 select-none text-[11px] sm:text-xs">
-                        <span>guest@portfolio:~$</span>
-                        <span className="text-zinc-400">write_message</span>
-                      </div>
-                      <div className="flex gap-2 pl-4 items-start">
-                        <span className="text-blue-400 font-bold mt-1 select-none">&gt;</span>
+                      {/* Message */}
+                      <div className="space-y-2">
+                        <label className="block text-xs font-bold text-zinc-400 uppercase tracking-wider">Message</label>
                         <textarea 
                           required
-                          rows={4}
+                          rows={5}
                           value={formData.message}
                           onChange={(e) => setFormData({...formData, message: e.target.value})}
-                          placeholder="Describe your vision, scope, or timeline..."
-                          className="bg-transparent border-none outline-none text-zinc-100 w-full py-0.5 font-mono placeholder-zinc-800 focus:ring-0 resize-none h-24 text-xs sm:text-sm"
+                          placeholder="Tell me about your project, goals, and timeline..."
+                          className="w-full px-4 py-3.5 rounded-xl bg-zinc-900/50 border border-zinc-800/80 text-sm text-zinc-100 placeholder-zinc-600 focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/20 transition-all duration-300 resize-none"
                         />
                       </div>
-                    </div>
 
-                    {/* Submit Section & Accent state info */}
-                    <div className="pt-4 border-t border-zinc-900 space-y-4">
-                      
-                      {/* Main Glowing CTA Button */}
+                      {/* Submit Button */}
                       <motion.button
-                        whileHover={{ scale: 1.02, boxShadow: '0 0 25px rgba(59, 130, 246, 0.4)' }}
+                        whileHover={{ scale: 1.01 }}
                         whileTap={{ scale: 0.98 }}
-                        animate={{ boxShadow: ['0 0 15px rgba(59, 130, 246, 0.2)', '0 0 25px rgba(59, 130, 246, 0.35)', '0 0 15px rgba(59, 130, 246, 0.2)'] }}
-                        transition={{ boxShadow: { duration: 2, repeat: Infinity, ease: "easeInOut" } }}
                         type="submit"
-                        className="w-full flex items-center justify-center gap-2 rounded-xl bg-blue-600 hover:bg-blue-500 px-6 py-4 text-xs sm:text-sm font-bold text-white transition-all shadow-lg hover:shadow-blue-500/10 relative overflow-hidden group cursor-pointer"
+                        className="group w-full flex items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-blue-600 via-blue-500 to-violet-600 hover:from-blue-500 hover:via-blue-400 hover:to-violet-500 px-6 py-4 text-sm font-bold text-white transition-all duration-300 shadow-lg shadow-blue-500/20 hover:shadow-blue-500/30 hover:shadow-xl relative overflow-hidden cursor-pointer"
                       >
-                        <span className="font-mono">&gt; send_message</span>
-                        <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                        {/* Animated shimmer effect */}
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+                        <span className="relative z-10">Send Message</span>
+                        <ArrowUpRight className="w-4 h-4 relative z-10 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                       </motion.button>
-
-                      {/* Status row with custom blinking cursor */}
-                      <div className="flex items-center gap-1.5 pt-1 text-[9px] sm:text-[10px] text-zinc-600 select-none font-mono">
-                        <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-ping" />
-                        <span>STATION SECURED</span>
-                        <span className="mx-1">•</span>
-                        <span>CURSOR STATE: ACTIVE</span>
-                        <span className="inline-block w-1.5 h-3.5 bg-blue-500 animate-[pulse_1s_infinite] ml-1" />
-                      </div>
-
-                    </div>
-                  </form>
-                )}
+                    </form>
+                  )}
+                </div>
               </div>
             </motion.div>
 
           </div>
-
-          {/* Quick Contact Buttons (Alternative Pill Shortcuts below columns) */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
-            className="flex flex-wrap justify-center items-center gap-3 sm:gap-4 mt-16 sm:mt-24 z-20 relative"
-          >
-            <a 
-              href="mailto:abdullahparvaiz2025@gmail.com" 
-              className="group flex items-center gap-2 px-5 py-2.5 rounded-full bg-zinc-900/50 backdrop-blur-md border border-zinc-800/80 hover:border-blue-500/30 text-xs sm:text-sm font-semibold text-zinc-300 hover:text-white transition-all duration-300"
-            >
-              <Mail className="w-4 h-4 text-blue-400 group-hover:scale-110 transition-transform" />
-              <span>Email Me</span>
-            </a>
-            <a 
-              href="https://linkedin.com/in/fahad-ali" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="group flex items-center gap-2 px-5 py-2.5 rounded-full bg-zinc-900/50 backdrop-blur-md border border-zinc-800/80 hover:border-blue-500/30 text-xs sm:text-sm font-semibold text-zinc-300 hover:text-white transition-all duration-300"
-            >
-              <Linkedin className="w-4 h-4 text-blue-400 group-hover:scale-110 transition-transform" />
-              <span>LinkedIn</span>
-            </a>
-            <a 
-              href="https://github.com/fahad-ali" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="group flex items-center gap-2 px-5 py-2.5 rounded-full bg-zinc-900/50 backdrop-blur-md border border-zinc-800/80 hover:border-blue-500/30 text-xs sm:text-sm font-semibold text-zinc-300 hover:text-white transition-all duration-300"
-            >
-              <Github className="w-4 h-4 text-blue-400 group-hover:scale-110 transition-transform" />
-              <span>GitHub</span>
-            </a>
-            <a 
-              href="https://calendly.com/fahad-ali" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="group flex items-center gap-2 px-5 py-2.5 rounded-full bg-blue-500/10 border border-blue-500/20 hover:border-blue-500/50 text-xs sm:text-sm font-semibold text-blue-300 hover:text-white transition-all duration-300 shadow-[0_0_15px_rgba(59,130,246,0.1)]"
-            >
-              <Calendar className="w-4 h-4 text-blue-400 group-hover:scale-110 transition-transform" />
-              <span>Schedule a Call</span>
-            </a>
-          </motion.div>
-
         </div>
       </section>
 
-      {/* EXTRAORDINARY PORTFOLIO FOOTER */}
-      <footer id="footer" className="relative w-full bg-[#050505] text-zinc-400 py-24 sm:py-32 overflow-hidden border-t border-zinc-900/60 z-30">
+      {/* ========================================================================= */}
+      {/* FOOTER - COMPLETELY REDESIGNED WITH MARQUEE & PREMIUM FEEL        */}
+      {/* ========================================================================= */}
+      <footer id="footer" className="relative w-full bg-[#030303] text-zinc-400 overflow-hidden border-t border-zinc-900/40">
         
-        {/* Subtle noise texture */}
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;utf8,<svg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22><filter id=%22noiseFilter%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.85%22 numOctaves=%223%22 stitchTiles=%22stitch%22/></filter><rect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22 opacity=%220.015%22/></svg>')] pointer-events-none opacity-[0.25] z-0" />
-
-        {/* Calm Blue Glow Effects */}
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-blue-500/10 rounded-full blur-[120px] pointer-events-none" />
-        <div className="absolute top-1/4 right-1/10 w-[300px] h-[300px] bg-indigo-500/5 rounded-full blur-[100px] pointer-events-none" />
-
-        {/* Fading Particles */}
-        {footerFloatingParticles.map((p, idx) => (
-          <motion.div
-            key={`footer-p-${idx}`}
-            className={`absolute ${p.size} rounded-full bg-blue-400/20 blur-[0.3px] pointer-events-none`}
-            style={{ left: p.left, top: p.top }}
-            animate={{
-              y: [0, -35, 0],
-              opacity: [0.08, 0.45, 0.08]
-            }}
-            transition={{
-              duration: 7 + idx * 2.5,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: p.delay
-            }}
-          />
-        ))}
-
-        <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 z-10 flex flex-col items-center text-center">
+        {/* Giant Scrolling Marquee Text */}
+        <div className="relative py-16 sm:py-24 overflow-hidden">
+          {/* Background glow */}
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div className="w-[600px] h-[200px] bg-blue-500/[0.04] rounded-full blur-[100px]" />
+          </div>
           
-          {/* Availability Badge */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-zinc-900/60 border border-zinc-800/80 text-xs text-zinc-300 font-medium tracking-wide shadow-sm mb-12"
-          >
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-            </span>
-            <span>Open to New Opportunities & Freelance</span>
-          </motion.div>
+          <div className="relative overflow-hidden whitespace-nowrap">
+            <motion.div
+              className="flex gap-16 items-center"
+              animate={{ x: ['0%', '-50%'] }}
+              transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
+            >
+              {[...Array(2)].map((_, setIdx) => (
+                <div key={setIdx} className="flex gap-16 items-center flex-shrink-0">
+                  {['Full-Stack Developer', 'React & Next.js', 'TypeScript', 'AI-Powered Apps', 'Modern Web'].map((text, idx) => (
+                    <span 
+                      key={`${setIdx}-${idx}`}
+                      className={`font-display font-black tracking-tight select-none text-5xl sm:text-7xl lg:text-8xl text-zinc-900 hover:text-zinc-700 transition-colors duration-500`}
+                    >
+                      {text}
+                    </span>
+                  ))}
+                </div>
+              ))}
+            </motion.div>
+          </div>
+        </div>
 
-          {/* Main Message */}
-          <div className="max-w-2xl space-y-6 mb-16">
-            <motion.h3 
+        {/* Footer Content */}
+        <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pb-12">
+          
+          {/* Top Row: Logo, Nav, Socials */}
+          <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-12 pb-12 border-b border-zinc-900/60">
+            
+            {/* Logo & Tagline */}
+            <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="font-display text-4xl sm:text-6xl font-black text-white tracking-tight"
+              transition={{ duration: 0.6 }}
+              className="text-center lg:text-left"
             >
-              Thanks For Visiting <span className="text-blue-500">✦</span>
-            </motion.h3>
-            <motion.p 
-              initial={{ opacity: 0, y: 15 }}
+              <span className="font-display text-2xl font-black text-white tracking-tight">
+                Fahad<span className="text-blue-500">.</span>
+              </span>
+              <p className="mt-2 text-xs text-zinc-500 max-w-xs leading-relaxed">
+                Building beautiful, fast, and intelligent web experiences that leave a lasting impression.
+              </p>
+            </motion.div>
+
+            {/* Navigation */}
+            <motion.nav 
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.15, ease: "easeOut" }}
-              className="font-sans text-sm sm:text-base text-zinc-400 leading-relaxed max-w-lg mx-auto"
+              transition={{ duration: 0.6, delay: 0.1 }}
             >
-              You made it to the end of the portfolio. Thanks for taking the time to explore my work, philosophy, and engineering journey.
-            </motion.p>
-          </div>
+              <ul className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm font-semibold text-zinc-500">
+                {['Home', 'Skills', 'Projects', 'Contact'].map((item) => {
+                  const targetId = item === 'Home' ? '#' : `#${item.toLowerCase()}`;
+                  return (
+                    <li key={item} className="relative group">
+                      <a 
+                        href={targetId}
+                        onClick={(e) => {
+                          if (item === 'Home') {
+                            e.preventDefault();
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                          }
+                        }}
+                        className="hover:text-white transition-colors duration-300"
+                      >
+                        {item}
+                      </a>
+                      <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-gradient-to-r from-blue-500 to-violet-500 rounded-full group-hover:w-full transition-all duration-300" />
+                    </li>
+                  );
+                })}
+              </ul>
+            </motion.nav>
 
-          {/* Signature Section */}
-          <motion.div 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.2, delay: 0.3 }}
-            className="mb-16 select-none"
-          >
-            <div className="relative inline-block">
-              <span className="block font-serif italic text-3xl sm:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-200 to-white font-light tracking-wide animate-pulse">
-                Fahad Ali
-              </span>
-              <div className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-12 h-[1px] bg-gradient-to-r from-transparent via-blue-500/50 to-transparent" />
-            </div>
-            <span className="block font-mono text-[10px] text-zinc-500 tracking-[0.25em] uppercase mt-3">
-              Full-Stack Developer
-            </span>
-          </motion.div>
-
-          {/* Minimal Footer Navigation */}
-          <motion.div 
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="mb-14"
-          >
-            <ul className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 text-xs font-sans font-semibold tracking-wider uppercase text-zinc-400">
-              {['Home', 'About', 'Skills', 'Projects', 'Contact'].map((item) => {
-                const targetId = item === 'Home' ? '#' : `#${item.toLowerCase()}`;
+            {/* Social Icons */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="flex items-center gap-3"
+            >
+              {[
+                { icon: Github, href: "https://github.com/fahad-ali", label: "GitHub" },
+                { icon: Linkedin, href: "https://linkedin.com/in/fahad-ali", label: "LinkedIn" },
+                { icon: Instagram, href: "https://instagram.com/fahad-ali", label: "Instagram" },
+                { icon: Mail, href: "mailto:abdullahparvaiz2025@gmail.com", label: "Email" },
+              ].map((soc) => {
+                const SocIcon = soc.icon;
                 return (
-                  <li key={item} className="relative group">
-                    <a 
-                      href={targetId}
-                      onClick={(e) => {
-                        if (item === 'Home') {
-                          e.preventDefault();
-                          window.scrollTo({ top: 0, behavior: 'smooth' });
-                        }
-                      }}
-                      className="hover:text-white transition-colors duration-200"
-                    >
-                      {item}
-                    </a>
-                    <span className="absolute bottom-[-4px] left-0 w-0 h-[1.5px] bg-blue-500 group-hover:w-full transition-all duration-300" />
-                  </li>
+                  <a
+                    key={soc.label}
+                    href={soc.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group w-10 h-10 rounded-xl bg-zinc-900/60 border border-zinc-800/60 flex items-center justify-center text-zinc-500 hover:text-white hover:border-blue-500/30 hover:bg-blue-500/10 transition-all duration-300"
+                    aria-label={soc.label}
+                  >
+                    <SocIcon className="w-4 h-4 transition-transform duration-300 group-hover:scale-110" />
+                  </a>
                 );
               })}
-            </ul>
-          </motion.div>
+            </motion.div>
+          </div>
 
-          {/* Premium Social Links */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="flex items-center justify-center gap-4 mb-16"
-          >
-            {[
-              { icon: Github, href: "https://github.com/fahad-ali", label: "GitHub" },
-              { icon: Linkedin, href: "https://linkedin.com/in/fahad-ali", label: "LinkedIn" },
-              { icon: Mail, href: "mailto:abdullahparvaiz2025@gmail.com", label: "Email" },
-              { icon: Twitter, href: "https://twitter.com/fahad-ali", label: "Twitter" }
-            ].map((soc, index) => {
-              const Icon = soc.icon;
-              return (
-                <a
-                  key={soc.label}
-                  href={soc.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-11 h-11 rounded-full bg-zinc-950 border border-zinc-800/80 flex items-center justify-center text-zinc-400 hover:text-blue-400 hover:border-blue-500/40 hover:shadow-[0_0_15px_rgba(59,130,246,0.25)] transition-all duration-300 group relative"
-                  aria-label={soc.label}
-                >
-                  <Icon className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />
-                  <span className="absolute -top-8 px-2 py-1 rounded bg-zinc-900 border border-zinc-800 text-[9px] font-sans font-bold text-zinc-300 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap shadow-md">
-                    {soc.label}
-                  </span>
-                </a>
-              );
-            })}
-          </motion.div>
+          {/* Bottom Row: Copyright + Back to Top */}
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8">
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="text-xs text-zinc-600 font-medium"
+            >
+              &copy; {new Date().getFullYear()} Fahad Ali. Designed &amp; developed with passion.
+            </motion.p>
 
-          {/* Copyright Metadata */}
-          <motion.div 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1 }}
-            className="text-[11px] font-mono text-zinc-600 tracking-wider flex flex-col sm:flex-row items-center gap-2 sm:gap-4 select-none"
-          >
-            <span>&copy; {new Date().getFullYear()} Fahad Ali. All rights reserved.</span>
-            <span className="hidden sm:inline text-zinc-800">|</span>
-            <span className="text-zinc-500 font-semibold group flex items-center gap-1">
-              <span>DESIGNED &amp; DEVELOPED TO THE HIGHEST SPEC</span>
-            </span>
-          </motion.div>
+            <motion.button
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className="group flex items-center gap-2 text-xs font-semibold text-zinc-500 hover:text-white transition-colors duration-300 cursor-pointer"
+            >
+              <span>Back to top</span>
+              <div className="w-8 h-8 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center group-hover:border-blue-500/30 group-hover:bg-blue-500/10 transition-all duration-300">
+                <ArrowUpRight className="w-3.5 h-3.5 -rotate-45 group-hover:-translate-y-0.5 transition-transform duration-300" />
+              </div>
+            </motion.button>
+          </div>
 
         </div>
       </footer>
       <Chatbot />
+
     </div>
   );
 }
+
